@@ -1,25 +1,17 @@
 import Link from "next/link";
-import HeaderItem from "./HeaderItem";
 
-import {
-  HomeIcon,
-  UserIcon,
-  SearchIcon,
-  LightningBoltIcon,
-  CollectionIcon,
-  BadgeCheckIcon,
-} from "@heroicons/react/outline";
+const user = { name: "John", email: "user@gmail.com", role: "admin" };
 
 const Header = () => {
   return (
-    <header className="flex flex-col sm:flex-row m-5 items-center justify-between h-auto">
-      <div className="flex flex-grow items-center justify-evenly max-w-2xl">
-        <HeaderItem title="HOME" Icon={HomeIcon} />
-        <HeaderItem title="TRENDING" Icon={LightningBoltIcon} />
-        <HeaderItem title="VERIFIED" Icon={BadgeCheckIcon} />
-        <HeaderItem title="COLLECTIONS" Icon={CollectionIcon} />
-        <HeaderItem title="SEARCH" Icon={SearchIcon} />
-        <HeaderItem title="ACCOUNT" Icon={UserIcon} />
+    <header className="md:w-9/12 w-11/12 mx-auto flex flex-col sm:flex-row m-5 items-center justify-between h-auto">
+      <div className="">
+        <Link href={`/dashboard/${user.role}`}>
+          <a className="text-2xl font-bold mr-6">Dashboard</a>
+        </Link>
+        <Link href={`/jobs`}>
+          <a className="text-2xl font-bold">Jobs</a>
+        </Link>
       </div>
       {/* logo */}
       <Link href="/" passHref>

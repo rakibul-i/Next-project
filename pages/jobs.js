@@ -27,7 +27,7 @@ const Jobs = (props) => {
         {/* filterBy job type */}
         <div className="flex justify-between py-3">
           <h1 className="text-center  text-3xl font-bold">
-            Jobs {jobs.length}
+            Jobs {jobs?.length}
           </h1>
           <select
             name=""
